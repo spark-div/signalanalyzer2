@@ -1,0 +1,737 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/zedgraph/!svn/ver/449/trunk/source/ZedGraph
+END
+MajorGrid.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/MajorGrid.cs
+END
+PolyObj.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/zedgraph/!svn/ver/378/trunk/source/ZedGraph/PolyObj.cs
+END
+ScaleStateList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/ScaleStateList.cs
+END
+ArrowObj.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/zedgraph/!svn/ver/378/trunk/source/ZedGraph/ArrowObj.cs
+END
+ZoomState.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/ZoomState.cs
+END
+HiLowBarItem.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/zedgraph/!svn/ver/432/trunk/source/ZedGraph/HiLowBarItem.cs
+END
+Fill.cs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/zedgraph/!svn/ver/379/trunk/source/ZedGraph/Fill.cs
+END
+GasGaugeRegion.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/zedgraph/!svn/ver/410/trunk/source/ZedGraph/GasGaugeRegion.cs
+END
+ZedGraphLocale.tw.resx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/367/trunk/source/ZedGraph/ZedGraphLocale.tw.resx
+END
+MinorGrid.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/MinorGrid.cs
+END
+PieItem.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/zedgraph/!svn/ver/410/trunk/source/ZedGraph/PieItem.cs
+END
+GraphObj.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/GraphObj.cs
+END
+TextScale.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/zedgraph/!svn/ver/364/trunk/source/ZedGraph/TextScale.cs
+END
+YAxis.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/YAxis.cs
+END
+PointPairCV.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/zedgraph/!svn/ver/393/trunk/source/ZedGraph/PointPairCV.cs
+END
+Chart.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/Chart.cs
+END
+CurveItem.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/zedgraph/!svn/ver/432/trunk/source/ZedGraph/CurveItem.cs
+END
+IPointListEdit.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/zedgraph/!svn/ver/369/trunk/source/ZedGraph/IPointListEdit.cs
+END
+ZedGraphControl.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/zedgraph/!svn/ver/413/trunk/source/ZedGraph/ZedGraphControl.Designer.cs
+END
+GraphPane.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/zedgraph/!svn/ver/424/trunk/source/ZedGraph/GraphPane.cs
+END
+LineItem.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/zedgraph/!svn/ver/414/trunk/source/ZedGraph/LineItem.cs
+END
+MajorTic.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/MajorTic.cs
+END
+ExponentScale.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/ExponentScale.cs
+END
+JapaneseCandleStickItem.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/zedgraph/!svn/ver/444/trunk/source/ZedGraph/JapaneseCandleStickItem.cs
+END
+ZoomStateStack.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/ZoomStateStack.cs
+END
+Border.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/zedgraph/!svn/ver/394/trunk/source/ZedGraph/Border.cs
+END
+ZedGraphControl.ContextMenu.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/zedgraph/!svn/ver/432/trunk/source/ZedGraph/ZedGraphControl.ContextMenu.cs
+END
+ErrorBar.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/zedgraph/!svn/ver/414/trunk/source/ZedGraph/ErrorBar.cs
+END
+X2Axis.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/X2Axis.cs
+END
+ColorSymbolRotator.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/ColorSymbolRotator.cs
+END
+Y2Axis.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/Y2Axis.cs
+END
+PaneList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/PaneList.cs
+END
+LinearAsOrdinalScale.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/LinearAsOrdinalScale.cs
+END
+CurveList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/zedgraph/!svn/ver/432/trunk/source/ZedGraph/CurveList.cs
+END
+LinearScale.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/LinearScale.cs
+END
+LineObj.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/zedgraph/!svn/ver/378/trunk/source/ZedGraph/LineObj.cs
+END
+ZedGraphLocale.pt.resx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/360/trunk/source/ZedGraph/ZedGraphLocale.pt.resx
+END
+BarItem.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/zedgraph/!svn/ver/432/trunk/source/ZedGraph/BarItem.cs
+END
+MinorTic.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/MinorTic.cs
+END
+PaneLayoutMgr.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/PaneLayoutMgr.cs
+END
+SamplePointList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/SamplePointList.cs
+END
+Scale.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/zedgraph/!svn/ver/421/trunk/source/ZedGraph/Scale.cs
+END
+ZedGraphLocale.de.resx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/ZedGraphLocale.de.resx
+END
+ZedGraphLocale.sv.resx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/254/trunk/source/ZedGraph/ZedGraphLocale.sv.resx
+END
+RollingPointPairList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/zedgraph/!svn/ver/433/trunk/source/ZedGraph/RollingPointPairList.cs
+END
+LogScale.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/LogScale.cs
+END
+PointPair4.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/zedgraph/!svn/ver/394/trunk/source/ZedGraph/PointPair4.cs
+END
+StockPointList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/zedgraph/!svn/ver/390/trunk/source/ZedGraph/StockPointList.cs
+END
+ZedGraphLocale.ja.resx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/ZedGraphLocale.ja.resx
+END
+XAxis.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/XAxis.cs
+END
+Link.cs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/Link.cs
+END
+ZedGraphControl.Printing.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/zedgraph/!svn/ver/411/trunk/source/ZedGraph/ZedGraphControl.Printing.cs
+END
+MasterPane.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/zedgraph/!svn/ver/434/trunk/source/ZedGraph/MasterPane.cs
+END
+PointPairBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/PointPairBase.cs
+END
+FilteredPointList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/zedgraph/!svn/ver/439/trunk/source/ZedGraph/FilteredPointList.cs
+END
+PointPair.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/zedgraph/!svn/ver/438/trunk/source/ZedGraph/PointPair.cs
+END
+Symbol.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/zedgraph/!svn/ver/421/trunk/source/ZedGraph/Symbol.cs
+END
+XDate.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/zedgraph/!svn/ver/435/trunk/source/ZedGraph/XDate.cs
+END
+ZedGraphLocale.es.resx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/405/trunk/source/ZedGraph/ZedGraphLocale.es.resx
+END
+GapLabel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/GapLabel.cs
+END
+Location.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/Location.cs
+END
+OHLCBar.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/OHLCBar.cs
+END
+HSBColor.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/HSBColor.cs
+END
+ScrollRange.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/ScrollRange.cs
+END
+ZedGraphLocale.hu.resx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/373/trunk/source/ZedGraph/ZedGraphLocale.hu.resx
+END
+ZedGraphLocale.sk.resx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/438/trunk/source/ZedGraph/ZedGraphLocale.sk.resx
+END
+Margin.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/Margin.cs
+END
+ImageObj.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/zedgraph/!svn/ver/365/trunk/source/ZedGraph/ImageObj.cs
+END
+Label.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/zedgraph/!svn/ver/393/trunk/source/ZedGraph/Label.cs
+END
+TextObj.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/zedgraph/!svn/ver/378/trunk/source/ZedGraph/TextObj.cs
+END
+FontSpec.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/zedgraph/!svn/ver/378/trunk/source/ZedGraph/FontSpec.cs
+END
+DateAsOrdinalScale.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/zedgraph/!svn/ver/438/trunk/source/ZedGraph/DateAsOrdinalScale.cs
+END
+ZedGraphException.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/ZedGraphException.cs
+END
+BarSettings.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/zedgraph/!svn/ver/443/trunk/source/ZedGraph/BarSettings.cs
+END
+ZedGraphLocale.ru.resx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/397/trunk/source/ZedGraph/ZedGraphLocale.ru.resx
+END
+BasicArrayPointList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/390/trunk/source/ZedGraph/BasicArrayPointList.cs
+END
+StockPt.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/zedgraph/!svn/ver/387/trunk/source/ZedGraph/StockPt.cs
+END
+GraphObjList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/GraphObjList.cs
+END
+ScaleState.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/zedgraph/!svn/ver/391/trunk/source/ZedGraph/ScaleState.cs
+END
+YAxisList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/YAxisList.cs
+END
+PointD.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/PointD.cs
+END
+ErrorBarItem.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/ErrorBarItem.cs
+END
+IPointList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/zedgraph/!svn/ver/436/trunk/source/ZedGraph/IPointList.cs
+END
+CollectionPlus.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/CollectionPlus.cs
+END
+NoDupePointList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/zedgraph/!svn/ver/402/trunk/source/ZedGraph/NoDupePointList.cs
+END
+DataSourcePointList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/433/trunk/source/ZedGraph/DataSourcePointList.cs
+END
+ZedGraphControl.Properties.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/zedgraph/!svn/ver/432/trunk/source/ZedGraph/ZedGraphControl.Properties.cs
+END
+SampleMultiPointList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/zedgraph/!svn/ver/369/trunk/source/ZedGraph/SampleMultiPointList.cs
+END
+AxisLabel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/AxisLabel.cs
+END
+Axis.cs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/zedgraph/!svn/ver/447/trunk/source/ZedGraph/Axis.cs
+END
+Types.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/zedgraph/!svn/ver/432/trunk/source/ZedGraph/Types.cs
+END
+ZedGraphLocale.fr.resx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/ZedGraphLocale.fr.resx
+END
+HiLowBar.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/zedgraph/!svn/ver/430/trunk/source/ZedGraph/HiLowBar.cs
+END
+ZedGraphLocale.zh-tw.resx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/zedgraph/!svn/ver/379/trunk/source/ZedGraph/ZedGraphLocale.zh-tw.resx
+END
+ValueHandler.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/zedgraph/!svn/ver/448/trunk/source/ZedGraph/ValueHandler.cs
+END
+ZedGraphControl.ScrollBars.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/zedgraph/!svn/ver/430/trunk/source/ZedGraph/ZedGraphControl.ScrollBars.cs
+END
+Y2AxisList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/Y2AxisList.cs
+END
+ZedGraphLocale.it.resx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/359/trunk/source/ZedGraph/ZedGraphLocale.it.resx
+END
+PaneBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/zedgraph/!svn/ver/434/trunk/source/ZedGraph/PaneBase.cs
+END
+ZedGraphLocale.zh-cn.resx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/ZedGraphLocale.zh-cn.resx
+END
+ZedGraphControl.resx
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/zedgraph/!svn/ver/364/trunk/source/ZedGraph/ZedGraphControl.resx
+END
+LineBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/zedgraph/!svn/ver/394/trunk/source/ZedGraph/LineBase.cs
+END
+BoxObj.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/zedgraph/!svn/ver/378/trunk/source/ZedGraph/BoxObj.cs
+END
+ZedGraphLocale.tr.resx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/395/trunk/source/ZedGraph/ZedGraphLocale.tr.resx
+END
+DateScale.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/zedgraph/!svn/ver/421/trunk/source/ZedGraph/DateScale.cs
+END
+Selection.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/zedgraph/!svn/ver/393/trunk/source/ZedGraph/Selection.cs
+END
+Line.cs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/zedgraph/!svn/ver/443/trunk/source/ZedGraph/Line.cs
+END
+EllipseObj.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/zedgraph/!svn/ver/378/trunk/source/ZedGraph/EllipseObj.cs
+END
+OHLCBarItem.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/zedgraph/!svn/ver/444/trunk/source/ZedGraph/OHLCBarItem.cs
+END
+JapaneseCandleStick.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/JapaneseCandleStick.cs
+END
+StickItem.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/zedgraph/!svn/ver/378/trunk/source/ZedGraph/StickItem.cs
+END
+Legend.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/zedgraph/!svn/ver/417/trunk/source/ZedGraph/Legend.cs
+END
+RadarPointList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/RadarPointList.cs
+END
+ZedGraph.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/ZedGraph.csproj
+END
+OrdinalScale.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/zedgraph/!svn/ver/396/trunk/source/ZedGraph/OrdinalScale.cs
+END
+GasGaugeNeedle.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/zedgraph/!svn/ver/415/trunk/source/ZedGraph/GasGaugeNeedle.cs
+END
+ZedGraphLocale.resx
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/zedgraph/!svn/ver/286/trunk/source/ZedGraph/ZedGraphLocale.resx
+END
+PointPairList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/zedgraph/!svn/ver/408/trunk/source/ZedGraph/PointPairList.cs
+END
+Bar.cs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/zedgraph/!svn/ver/432/trunk/source/ZedGraph/Bar.cs
+END
+ZedGraphControl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/zedgraph/!svn/ver/432/trunk/source/ZedGraph/ZedGraphControl.cs
+END
+ScrollRangeList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/zedgraph/!svn/ver/352/trunk/source/ZedGraph/ScrollRangeList.cs
+END
+ZedGraphControl.Events.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/zedgraph/!svn/ver/449/trunk/source/ZedGraph/ZedGraphControl.Events.cs
+END

@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 54
+*.suo
+LibrarySupport
+*.tgs
+*.tgw
+*.bak
+TestColorWheel
+
+END

@@ -1,0 +1,371 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/zedgraph/!svn/ver/432/trunk/demo/ZedGraph.Demo
+END
+FilledBarGraphDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/FilledBarGraphDemo.cs
+END
+ChartTabForm.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/ChartTabForm.Designer.cs
+END
+OverlayBarDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/OverlayBarDemo.cs
+END
+ChartTabForm.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/ChartTabForm.cs
+END
+BaseTicDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/BaseTicDemo.cs
+END
+OHLCBarDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/zedgraph/!svn/ver/418/trunk/demo/ZedGraph.Demo/OHLCBarDemo.cs
+END
+LineStackingDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/LineStackingDemo.cs
+END
+TextAxisSampleDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/TextAxisSampleDemo.cs
+END
+HorizontalStackedBarDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/HorizontalStackedBarDemo.cs
+END
+HorizontalBarDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/HorizontalBarDemo.cs
+END
+DualYDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/DualYDemo.cs
+END
+ImageForSymbolDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/ImageForSymbolDemo.cs
+END
+PieSampleDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/PieSampleDemo.cs
+END
+DemoType.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/zedgraph/!svn/ver/161/trunk/demo/ZedGraph.Demo/DemoType.cs
+END
+MultiYDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/MultiYDemo.cs
+END
+GradientByValueDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/GradientByValueDemo.cs
+END
+DemoTemplate.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/zedgraph/!svn/ver/176/trunk/demo/ZedGraph.Demo/DemoTemplate.txt
+END
+SortedOverlayBarDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/SortedOverlayBarDemo.cs
+END
+SmoothChartDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/SmoothChartDemo.cs
+END
+MasterSampleDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/355/trunk/demo/ZedGraph.Demo/MasterSampleDemo.cs
+END
+FilledCurve.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/FilledCurve.cs
+END
+PieChartDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/zedgraph/!svn/ver/396/trunk/demo/ZedGraph.Demo/PieChartDemo.cs
+END
+VerticalBarsWithLabelsDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/zedgraph/!svn/ver/365/trunk/demo/ZedGraph.Demo/VerticalBarsWithLabelsDemo.cs
+END
+CrossLineDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/CrossLineDemo.cs
+END
+SampleMultiPointListDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/SampleMultiPointListDemo.cs
+END
+ZedGraphDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/zedgraph/!svn/ver/178/trunk/demo/ZedGraph.Demo/ZedGraphDemo.cs
+END
+AboutForm.resx
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/AboutForm.resx
+END
+SineBarGraphDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/SineBarGraphDemo.cs
+END
+StackedBarSampleDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/StackedBarSampleDemo.cs
+END
+HiLowBarDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/zedgraph/!svn/ver/432/trunk/demo/ZedGraph.Demo/HiLowBarDemo.cs
+END
+PercentStkBarDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/PercentStkBarDemo.cs
+END
+HiLowCloseDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/zedgraph/!svn/ver/375/trunk/demo/ZedGraph.Demo/HiLowCloseDemo.cs
+END
+DemoBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/DemoBase.cs
+END
+MultiPieChartDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/zedgraph/!svn/ver/355/trunk/demo/ZedGraph.Demo/MultiPieChartDemo.cs
+END
+HorizontalBarsWithLabels.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/HorizontalBarsWithLabels.cs
+END
+BarGraphBandDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/BarGraphBandDemo.cs
+END
+LicenseForm.resx
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/LicenseForm.resx
+END
+ErrorBarDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/zedgraph/!svn/ver/378/trunk/demo/ZedGraph.Demo/ErrorBarDemo.cs
+END
+HorizontalBarSampleDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/HorizontalBarSampleDemo.cs
+END
+TransparentDemo1.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/TransparentDemo1.cs
+END
+ChartTabForm.resx
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/ChartTabForm.resx
+END
+CandleStickDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/CandleStickDemo.cs
+END
+AboutForm.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/AboutForm.Designer.cs
+END
+BarChartSampleDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/BarChartSampleDemo.cs
+END
+MasterPaneLayout.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/zedgraph/!svn/ver/355/trunk/demo/ZedGraph.Demo/MasterPaneLayout.cs
+END
+AboutForm.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/AboutForm.cs
+END
+DemoTabForm.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/zedgraph/!svn/ver/379/trunk/demo/ZedGraph.Demo/DemoTabForm.cs
+END
+JapaneseCandleStickDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/zedgraph/!svn/ver/418/trunk/demo/ZedGraph.Demo/JapaneseCandleStickDemo.cs
+END
+InitialSampleDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/InitialSampleDemo.cs
+END
+ModInitialSampleDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/ModInitialSampleDemo.cs
+END
+StickItemDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/StickItemDemo.cs
+END
+StepChartDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/StepChartDemo.cs
+END
+LineGraphBandDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/zedgraph/!svn/ver/403/trunk/demo/ZedGraph.Demo/LineGraphBandDemo.cs
+END
+ComboDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/zedgraph/!svn/ver/403/trunk/demo/ZedGraph.Demo/ComboDemo.cs
+END
+MasterPaneDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/zedgraph/!svn/ver/355/trunk/demo/ZedGraph.Demo/MasterPaneDemo.cs
+END
+LicenseForm.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/LicenseForm.Designer.cs
+END
+StackedBarsWithLabels.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/StackedBarsWithLabels.cs
+END
+LicenseForm.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/LicenseForm.cs
+END
+SynchronizedPanes.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/zedgraph/!svn/ver/355/trunk/demo/ZedGraph.Demo/SynchronizedPanes.cs
+END
+Program.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/Program.cs
+END
+DateAxisSampleDemo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/zedgraph/!svn/ver/352/trunk/demo/ZedGraph.Demo/DateAxisSampleDemo.cs
+END
