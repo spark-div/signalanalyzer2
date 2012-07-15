@@ -49,7 +49,12 @@ namespace SignalAnalyzer2
             _numOutBuffers = 0;
            // ------------------------------------------------------
             InputZGraphCtrl.GraphPane.Title.Text = "Input, mV";
+            InputZGraphCtrl.GraphPane.XAxis.MinorGrid.IsVisible = true;
+            InputZGraphCtrl.GraphPane.YAxis.MinorGrid.IsVisible = true;
             SpectrumZGraphCtrl.GraphPane.Title.Text = "Spectrum, dB";
+            SpectrumZGraphCtrl.GraphPane.XAxis.MinorGrid.IsVisible = true;
+            SpectrumZGraphCtrl.GraphPane.YAxis.MinorGrid.IsVisible = true;
+//            SpectrumZGraphCtrl.GraphPane.YAxis.Type = AxisType.Log;
         }
 
         private void Terminate()
@@ -260,7 +265,7 @@ namespace SignalAnalyzer2
            {
               {
                  double _x = Convert.ToDouble(i);
-                 double _y = Convert.ToDouble(RealOut[i]);
+                 double _y = Convert.ToDouble(AmplSpectrum[i]);
                  m_pointsList.Add(_x, _y);
               }
            }
