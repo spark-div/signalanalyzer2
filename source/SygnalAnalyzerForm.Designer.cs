@@ -30,11 +30,11 @@
       {
           this.components = new System.ComponentModel.Container();
           this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-          this.StartCaptureBtn = new System.Windows.Forms.Button();
-          this.SpectrumZGraphCtrl = new ZedGraph.ZedGraphControl();
           this.InputZGraphCtrl = new ZedGraph.ZedGraphControl();
-          this.StopBtn = new System.Windows.Forms.Button();
+          this.SpectrumZGraphCtrl = new ZedGraph.ZedGraphControl();
           this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+          this.StartCaptureBtn = new System.Windows.Forms.Button();
+          this.StopBtn = new System.Windows.Forms.Button();
           this.menuStrip1 = new System.Windows.Forms.MenuStrip();
           this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.deviceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,15 +62,20 @@
           this.tableLayoutPanel1.Size = new System.Drawing.Size(1017, 514);
           this.tableLayoutPanel1.TabIndex = 0;
           // 
-          // StartCaptureBtn
+          // InputZGraphCtrl
           // 
-          this.StartCaptureBtn.Location = new System.Drawing.Point(3, 3);
-          this.StartCaptureBtn.Name = "StartCaptureBtn";
-          this.StartCaptureBtn.Size = new System.Drawing.Size(75, 23);
-          this.StartCaptureBtn.TabIndex = 0;
-          this.StartCaptureBtn.Text = "Capture";
-          this.StartCaptureBtn.UseVisualStyleBackColor = true;
-          this.StartCaptureBtn.Click += new System.EventHandler(this.StartCaptureBtn_Click);
+          this.InputZGraphCtrl.Dock = System.Windows.Forms.DockStyle.Fill;
+          this.InputZGraphCtrl.Location = new System.Drawing.Point(3, 3);
+          this.InputZGraphCtrl.Name = "InputZGraphCtrl";
+          this.InputZGraphCtrl.ScrollGrace = 0;
+          this.InputZGraphCtrl.ScrollMaxX = 0;
+          this.InputZGraphCtrl.ScrollMaxY = 0;
+          this.InputZGraphCtrl.ScrollMaxY2 = 0;
+          this.InputZGraphCtrl.ScrollMinX = 0;
+          this.InputZGraphCtrl.ScrollMinY = 0;
+          this.InputZGraphCtrl.ScrollMinY2 = 0;
+          this.InputZGraphCtrl.Size = new System.Drawing.Size(1011, 247);
+          this.InputZGraphCtrl.TabIndex = 0;
           // 
           // SpectrumZGraphCtrl
           // 
@@ -87,31 +92,6 @@
           this.SpectrumZGraphCtrl.Size = new System.Drawing.Size(1011, 218);
           this.SpectrumZGraphCtrl.TabIndex = 0;
           // 
-          // InputZGraphCtrl
-          // 
-          this.InputZGraphCtrl.Dock = System.Windows.Forms.DockStyle.Fill;
-          this.InputZGraphCtrl.Location = new System.Drawing.Point(3, 3);
-          this.InputZGraphCtrl.Name = "InputZGraphCtrl";
-          this.InputZGraphCtrl.ScrollGrace = 0;
-          this.InputZGraphCtrl.ScrollMaxX = 0;
-          this.InputZGraphCtrl.ScrollMaxY = 0;
-          this.InputZGraphCtrl.ScrollMaxY2 = 0;
-          this.InputZGraphCtrl.ScrollMinX = 0;
-          this.InputZGraphCtrl.ScrollMinY = 0;
-          this.InputZGraphCtrl.ScrollMinY2 = 0;
-          this.InputZGraphCtrl.Size = new System.Drawing.Size(1011, 247);
-          this.InputZGraphCtrl.TabIndex = 0;
-          // 
-          // StopBtn
-          // 
-          this.StopBtn.Location = new System.Drawing.Point(103, 3);
-          this.StopBtn.Name = "StopBtn";
-          this.StopBtn.Size = new System.Drawing.Size(75, 23);
-          this.StopBtn.TabIndex = 1;
-          this.StopBtn.Text = "Stop";
-          this.StopBtn.UseVisualStyleBackColor = true;
-          this.StopBtn.Click += new System.EventHandler(this.StopBtn_Click);
-          // 
           // tableLayoutPanel2
           // 
           this.tableLayoutPanel2.ColumnCount = 2;
@@ -123,9 +103,29 @@
           this.tableLayoutPanel2.Name = "tableLayoutPanel2";
           this.tableLayoutPanel2.RowCount = 1;
           this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-          this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+          this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
           this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 31);
           this.tableLayoutPanel2.TabIndex = 2;
+          // 
+          // StartCaptureBtn
+          // 
+          this.StartCaptureBtn.Location = new System.Drawing.Point(3, 3);
+          this.StartCaptureBtn.Name = "StartCaptureBtn";
+          this.StartCaptureBtn.Size = new System.Drawing.Size(75, 23);
+          this.StartCaptureBtn.TabIndex = 0;
+          this.StartCaptureBtn.Text = "Capture";
+          this.StartCaptureBtn.UseVisualStyleBackColor = true;
+          this.StartCaptureBtn.Click += new System.EventHandler(this.StartCaptureBtn_Click);
+          // 
+          // StopBtn
+          // 
+          this.StopBtn.Location = new System.Drawing.Point(103, 3);
+          this.StopBtn.Name = "StopBtn";
+          this.StopBtn.Size = new System.Drawing.Size(75, 23);
+          this.StopBtn.TabIndex = 1;
+          this.StopBtn.Text = "Stop";
+          this.StopBtn.UseVisualStyleBackColor = true;
+          this.StopBtn.Click += new System.EventHandler(this.StopBtn_Click);
           // 
           // menuStrip1
           // 
@@ -157,6 +157,7 @@
           this.selectInputDeviceToolStripMenuItem.Name = "selectInputDeviceToolStripMenuItem";
           this.selectInputDeviceToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
           this.selectInputDeviceToolStripMenuItem.Text = "Select input device";
+          this.selectInputDeviceToolStripMenuItem.Click += new System.EventHandler(this.selectInputDeviceToolStripMenuItem_Click);
           // 
           // SygnalAnalyzerForm
           // 

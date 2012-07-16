@@ -18,6 +18,7 @@ namespace SignalAnalyzer2
 
     public partial class SygnalAnalyzerForm : Form, IWaveNotifyHandler
     {
+        private int m_chosendiveceid = 0;
         private const int WM_USER = 0x0400;
         private const int WM_AUDIO_DONE = WM_USER + 0x100;
         private const int MAX_BUFFERS = 4;
@@ -49,12 +50,16 @@ namespace SignalAnalyzer2
             _numOutBuffers = 0;
            // ------------------------------------------------------
             InputZGraphCtrl.GraphPane.Title.Text = "Input, mV";
+            InputZGraphCtrl.GraphPane.XAxis.Title.Text = "time, ms";
+            InputZGraphCtrl.GraphPane.YAxis.Title.Text = "signal, mV";
             InputZGraphCtrl.GraphPane.XAxis.MinorGrid.IsVisible = true;
             InputZGraphCtrl.GraphPane.YAxis.MinorGrid.IsVisible = true;
             SpectrumZGraphCtrl.GraphPane.Title.Text = "Spectrum, dB";
             SpectrumZGraphCtrl.GraphPane.XAxis.MinorGrid.IsVisible = true;
             SpectrumZGraphCtrl.GraphPane.YAxis.MinorGrid.IsVisible = true;
-//            SpectrumZGraphCtrl.GraphPane.YAxis.Type = AxisType.Log;
+            SpectrumZGraphCtrl.GraphPane.YAxis.Type = AxisType.Log;
+            SpectrumZGraphCtrl.GraphPane.YAxis.Title.Text = "Amplitude, db";
+            SpectrumZGraphCtrl.GraphPane.XAxis.Title.Text = "frequency, Hz";
         }
 
         private void Terminate()
@@ -253,7 +258,7 @@ namespace SignalAnalyzer2
            GraphPane graphPane = InputZGraphCtrl.GraphPane;
            graphPane.CurveList.Clear();
            // Generate a blue curve with Star symbols
-           LineItem myCurve = graphPane.AddCurve("Input, mV", m_pointsList, Color.Blue, SymbolType.None);
+           LineItem myCurve = graphPane.AddCurve("Input, mV", m_pointsList, Color.GreenYellow, SymbolType.None);
            InputZGraphCtrl.AxisChange();
            InputZGraphCtrl.Invalidate();
         }
@@ -264,16 +269,17 @@ namespace SignalAnalyzer2
            for (int i = 0; i < _numSamples; i++)
            {
               {
-                 double _x = Convert.ToDouble(i);
+                 //double indice = ((double)i * (double)_numSamples / _wfmt.SamplesPerSecond);
+                 double indice = ((double)i * _wfmt.SamplesPerSecond) / (double)_numSamples;
+                 double _x = indice;
                  double _y = Convert.ToDouble(AmplSpectrum[i]);
                  m_pointsList.Add(_x, _y);
               }
            }
 
            GraphPane graphPane = SpectrumZGraphCtrl.GraphPane;
-           graphPane.CurveList.Clear();
-           // Generate a blue curve with Star symbols
-           LineItem myCurve = graphPane.AddCurve("Spectrum", m_pointsList, Color.Blue, SymbolType.None);
+           graphPane.CurveList.Clear();           
+           LineItem myCurve = graphPane.AddCurve("Spectrum", m_pointsList, Color.Green, SymbolType.None);
            SpectrumZGraphCtrl.AxisChange();
            SpectrumZGraphCtrl.Invalidate();
         }
@@ -522,6 +528,15 @@ namespace SignalAnalyzer2
         private void StopBtn_Click(object sender, EventArgs e)
         {
            Terminate();
+        }
+
+        private void selectInputDeviceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChooseDevice choosedeviceform = new ChooseDevice();
+            if (choosedeviceform.ShowDialog() == DialogResult.OK)
+            {
+                m_chosendiveceid = choosedeviceform.ChosenDeviceID;
+            }
         }
     }
 }

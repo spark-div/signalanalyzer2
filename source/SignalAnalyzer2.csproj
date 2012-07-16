@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChooseDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseDevice.Designer.cs">
+      <DependentUpon>ChooseDevice.cs</DependentUpon>
+    </Compile>
     <Compile Include="SygnalAnalyzerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChooseDevice.resx">
+      <DependentUpon>ChooseDevice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

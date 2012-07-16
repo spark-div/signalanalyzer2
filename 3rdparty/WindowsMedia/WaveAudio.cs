@@ -622,11 +622,11 @@ namespace Ernzo.Windows.WaveAudio
 
         [DllImportAttribute(WaveAudioLib.LibName, EntryPoint = "waveInGetDevCapsA")]
         [SuppressUnmanagedCodeSecurityAttribute]
-        public static extern int waveInGetDevCapsA([MarshalAsAttribute(UnmanagedType.SysUInt)] int uDeviceID, ref tWAVEINCAPSA pwic, int cbwic);
+        public static extern int waveInGetDevCapsA([MarshalAsAttribute(UnmanagedType.I4)] int uDeviceID, ref tWAVEINCAPSA pwic, int cbwic);
 
         [DllImportAttribute(WaveAudioLib.LibName, EntryPoint = "waveInGetDevCapsW")]
         [SuppressUnmanagedCodeSecurityAttribute]
-        public static extern int waveInGetDevCapsW([MarshalAsAttribute(UnmanagedType.SysUInt)] int uDeviceID, ref tWAVEINCAPSW pwic, int cbwic);
+        public static extern int waveInGetDevCapsW([MarshalAsAttribute(UnmanagedType.I4)] int uDeviceID, ref tWAVEINCAPSW pwic, int cbwic);
 
         [DllImportAttribute(WaveAudioLib.LibName, EntryPoint = "waveInGetPosition")]
         [SuppressUnmanagedCodeSecurityAttribute]
@@ -717,8 +717,9 @@ namespace Ernzo.Windows.WaveAudio
         public static extern int waveOutMessage(IntPtr hwo, int uMsg, IntPtr dw1, IntPtr dw2);
 
         [DllImportAttribute(WaveAudioLib.LibName, EntryPoint = "waveOutGetDevCapsA")]
-        [SuppressUnmanagedCodeSecurityAttribute]
-        public static extern int waveOutGetDevCapsA([MarshalAsAttribute(UnmanagedType.SysUInt)] int uDeviceID, ref tWAVEOUTCAPSA pwoc, int cbwoc);
+        [SuppressUnmanagedCodeSecurityAttribute]        
+        //public static extern int waveInGetDevCapsA(int uDeviceID, ref tWAVEOUTCAPSA pwic, int cbwic);
+        public static extern int waveOutGetDevCapsA([MarshalAsAttribute(UnmanagedType.I4)] int uDeviceID, ref tWAVEOUTCAPSA pwoc, int cbwoc);        
 
         [DllImportAttribute(WaveAudioLib.LibName, EntryPoint = "waveOutGetDevCapsW")]
         [SuppressUnmanagedCodeSecurityAttribute]
