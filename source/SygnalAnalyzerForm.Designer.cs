@@ -28,7 +28,6 @@
       /// </summary>
       private void InitializeComponent()
       {
-          this.components = new System.ComponentModel.Container();
           this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
           this.InputZGraphCtrl = new ZedGraph.ZedGraphControl();
           this.SpectrumZGraphCtrl = new ZedGraph.ZedGraphControl();
@@ -39,6 +38,7 @@
           this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.deviceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.selectInputDeviceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+          this.EnergyBar = new System.Windows.Forms.ProgressBar();
           this.tableLayoutPanel1.SuspendLayout();
           this.tableLayoutPanel2.SuspendLayout();
           this.menuStrip1.SuspendLayout();
@@ -46,12 +46,14 @@
           // 
           // tableLayoutPanel1
           // 
-          this.tableLayoutPanel1.ColumnCount = 1;
+          this.tableLayoutPanel1.ColumnCount = 2;
           this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+          this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
           this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
           this.tableLayoutPanel1.Controls.Add(this.InputZGraphCtrl, 0, 0);
           this.tableLayoutPanel1.Controls.Add(this.SpectrumZGraphCtrl, 0, 1);
           this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
+          this.tableLayoutPanel1.Controls.Add(this.EnergyBar, 1, 0);
           this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
           this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
           this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -67,14 +69,14 @@
           this.InputZGraphCtrl.Dock = System.Windows.Forms.DockStyle.Fill;
           this.InputZGraphCtrl.Location = new System.Drawing.Point(3, 3);
           this.InputZGraphCtrl.Name = "InputZGraphCtrl";
-          this.InputZGraphCtrl.ScrollGrace = 0;
-          this.InputZGraphCtrl.ScrollMaxX = 0;
-          this.InputZGraphCtrl.ScrollMaxY = 0;
-          this.InputZGraphCtrl.ScrollMaxY2 = 0;
-          this.InputZGraphCtrl.ScrollMinX = 0;
-          this.InputZGraphCtrl.ScrollMinY = 0;
-          this.InputZGraphCtrl.ScrollMinY2 = 0;
-          this.InputZGraphCtrl.Size = new System.Drawing.Size(1011, 247);
+          this.InputZGraphCtrl.ScrollGrace = 0D;
+          this.InputZGraphCtrl.ScrollMaxX = 0D;
+          this.InputZGraphCtrl.ScrollMaxY = 0D;
+          this.InputZGraphCtrl.ScrollMaxY2 = 0D;
+          this.InputZGraphCtrl.ScrollMinX = 0D;
+          this.InputZGraphCtrl.ScrollMinY = 0D;
+          this.InputZGraphCtrl.ScrollMinY2 = 0D;
+          this.InputZGraphCtrl.Size = new System.Drawing.Size(888, 247);
           this.InputZGraphCtrl.TabIndex = 0;
           // 
           // SpectrumZGraphCtrl
@@ -82,14 +84,14 @@
           this.SpectrumZGraphCtrl.Dock = System.Windows.Forms.DockStyle.Fill;
           this.SpectrumZGraphCtrl.Location = new System.Drawing.Point(3, 256);
           this.SpectrumZGraphCtrl.Name = "SpectrumZGraphCtrl";
-          this.SpectrumZGraphCtrl.ScrollGrace = 0;
-          this.SpectrumZGraphCtrl.ScrollMaxX = 0;
-          this.SpectrumZGraphCtrl.ScrollMaxY = 0;
-          this.SpectrumZGraphCtrl.ScrollMaxY2 = 0;
-          this.SpectrumZGraphCtrl.ScrollMinX = 0;
-          this.SpectrumZGraphCtrl.ScrollMinY = 0;
-          this.SpectrumZGraphCtrl.ScrollMinY2 = 0;
-          this.SpectrumZGraphCtrl.Size = new System.Drawing.Size(1011, 218);
+          this.SpectrumZGraphCtrl.ScrollGrace = 0D;
+          this.SpectrumZGraphCtrl.ScrollMaxX = 0D;
+          this.SpectrumZGraphCtrl.ScrollMaxY = 0D;
+          this.SpectrumZGraphCtrl.ScrollMaxY2 = 0D;
+          this.SpectrumZGraphCtrl.ScrollMinX = 0D;
+          this.SpectrumZGraphCtrl.ScrollMinY = 0D;
+          this.SpectrumZGraphCtrl.ScrollMinY2 = 0D;
+          this.SpectrumZGraphCtrl.Size = new System.Drawing.Size(888, 218);
           this.SpectrumZGraphCtrl.TabIndex = 0;
           // 
           // tableLayoutPanel2
@@ -159,6 +161,16 @@
           this.selectInputDeviceToolStripMenuItem.Text = "Select input device";
           this.selectInputDeviceToolStripMenuItem.Click += new System.EventHandler(this.selectInputDeviceToolStripMenuItem_Click);
           // 
+          // EnergyBar
+          // 
+          this.EnergyBar.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+          this.EnergyBar.Location = new System.Drawing.Point(897, 3);
+          this.EnergyBar.MarqueeAnimationSpeed = 0;
+          this.EnergyBar.Name = "EnergyBar";
+          this.EnergyBar.Size = new System.Drawing.Size(41, 247);
+          this.EnergyBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+          this.EnergyBar.TabIndex = 3;
+          // 
           // SygnalAnalyzerForm
           // 
           this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,6 +202,7 @@
       private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem deviceToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem selectInputDeviceToolStripMenuItem;
+      private System.Windows.Forms.ProgressBar EnergyBar;
 
    }
 }

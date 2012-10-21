@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalAnalyzer2", "SignalAnalyzer2.csproj", "{170BD2B8-0167-42DF-B73E-7B832B41DBF3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsMedia", "..\3rdparty\WindowsMedia\WindowsMedia.csproj", "{6EC1A5CA-5E1D-4CE9-A6B3-79633BA2171B}"

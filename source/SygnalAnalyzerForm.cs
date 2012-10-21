@@ -31,6 +31,8 @@ namespace SignalAnalyzer2
         private double[] RealOut;
         private double[] ImagOut;
         private double[] AmplOut;
+        //previous samples
+        private double[][] mPreviousAmplSpectrum;
         private byte[] waveData;    // copy of wave data - unless 'unsafe' code is an option
         private WaveBuffer[] _waveBuffer;
         private WaveInDevice _waveInput;
@@ -57,7 +59,7 @@ namespace SignalAnalyzer2
             SpectrumZGraphCtrl.GraphPane.Title.Text = "Spectrum, dB";
             SpectrumZGraphCtrl.GraphPane.XAxis.MinorGrid.IsVisible = true;
             SpectrumZGraphCtrl.GraphPane.YAxis.MinorGrid.IsVisible = true;
-            SpectrumZGraphCtrl.GraphPane.YAxis.Type = AxisType.Log;
+            //SpectrumZGraphCtrl.GraphPane.YAxis.Type = AxisType.Log;
             SpectrumZGraphCtrl.GraphPane.YAxis.Title.Text = "Amplitude, db";
             SpectrumZGraphCtrl.GraphPane.XAxis.Title.Text = "frequency, Hz";
         }
@@ -268,8 +270,7 @@ namespace SignalAnalyzer2
            m_pointsList = new PointPairList();
            for (int i = 0; i < _numSamples; i++)
            {
-              {
-                 //double indice = ((double)i * (double)_numSamples / _wfmt.SamplesPerSecond);
+              {                 
                  double indice = ((double)i * _wfmt.SamplesPerSecond) / (double)_numSamples;
                  double _x = indice;
                  double _y = Convert.ToDouble(AmplSpectrum[i]);
@@ -284,6 +285,38 @@ namespace SignalAnalyzer2
            SpectrumZGraphCtrl.Invalidate();
         }
 
+        // summurize 8 previous samples
+        private void sumAmplSpectrum(double[] AmplSpectrum, uint size)
+        {
+            GraphPane graphPane = SpectrumZGraphCtrl.GraphPane;
+            graphPane.CurveList.Clear();
+            LineItem myCurve = graphPane.AddCurve("Spectrum", m_pointsList, Color.Green, SymbolType.None);
+            SpectrumZGraphCtrl.AxisChange();
+            SpectrumZGraphCtrl.Invalidate();
+        }
+
+#if USING_PEAKMETER
+        private void renderPeakMeter();
+        {
+               double maxAmpl = (_wfmt.BitsPerSample == 8) ? (127.0 * 127.0) : (32767.0 * 32767.0);
+                               
+                // update meter
+                int centerFreq = (int)(_wfmt.SamplesPerSecond / 2);
+                for (int i = 0; i < NUM_FREQUENCY; ++i)
+                {
+                    if (METER_FREQUENCY[i] > centerFreq)
+                        _meterData[i] = 0;
+                    else
+                    {
+                        int indice = (int)(METER_FREQUENCY[i] * _numSamples / _wfmt.SamplesPerSecond);
+                        int metervalue = (int)(100+ 20.0 * Math.Log10(AmplOut[indice] / maxAmpl));
+                        _meterData[i] = metervalue;
+                    }
+                }
+                
+                peakMeterCtrl1.SetData(_meterData, 0, NUM_FREQUENCY);
+        }
+#endif //USING_PEAKMETER
         void ComputeFFT(WaveBuffer wbuf)
         {
             if (GetAudioData(wbuf.AudioData, wbuf.BytesRecorded, _wfmt))
@@ -318,25 +351,10 @@ namespace SignalAnalyzer2
 #endif
 
 #if USING_PEAKMETER
-                double maxAmpl = (_wfmt.BitsPerSample == 8) ? (127.0 * 127.0) : (32767.0 * 32767.0);
-                               
-                // update meter
-                int centerFreq = (int)(_wfmt.SamplesPerSecond / 2);
-                for (int i = 0; i < NUM_FREQUENCY; ++i)
-                {
-                    if (METER_FREQUENCY[i] > centerFreq)
-                        _meterData[i] = 0;
-                    else
-                    {
-                        int indice = (int)(METER_FREQUENCY[i] * _numSamples / _wfmt.SamplesPerSecond);
-                        int metervalue = (int)(100+ 20.0 * Math.Log10(AmplOut[indice] / maxAmpl));
-                        _meterData[i] = metervalue;
-                    }
-                }
-                
-                peakMeterCtrl1.SetData(_meterData, 0, NUM_FREQUENCY);
+                renderPeakMeter();
 #else
                 drawSpectrum(AmplOut, NUM_FREQUENCY);
+                sumAmplSpectrum(AmplOut, NUM_FREQUENCY);
 #endif //USING_PEAKMETER
                 _numSamples = 0; // ready to do it again
             }
