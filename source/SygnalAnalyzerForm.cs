@@ -59,7 +59,7 @@ namespace SignalAnalyzer2
             SpectrumZGraphCtrl.GraphPane.Title.Text = "Spectrum, dB";
             SpectrumZGraphCtrl.GraphPane.XAxis.MinorGrid.IsVisible = true;
             SpectrumZGraphCtrl.GraphPane.YAxis.MinorGrid.IsVisible = true;
-            //SpectrumZGraphCtrl.GraphPane.YAxis.Type = AxisType.Log;
+            SpectrumZGraphCtrl.GraphPane.YAxis.Type = AxisType.Log;
             SpectrumZGraphCtrl.GraphPane.YAxis.Title.Text = "Amplitude, db";
             SpectrumZGraphCtrl.GraphPane.XAxis.Title.Text = "frequency, Hz";
         }
@@ -287,7 +287,7 @@ namespace SignalAnalyzer2
 
         private void refreshDigest()
         {
-            EnergyBar.Amplitude = (int)mSamplesSummator.computeDigest() / 99000000 ;
+            EnergyBar.Amplitude = (int)mSamplesSummator.computeDigest(); // 99000000 ;
         }
 
         // summurize 8 previous samples
@@ -372,14 +372,14 @@ namespace SignalAnalyzer2
                 // We can skip N/2 to N samples (mirror frequencies) - Digital samples are real integer
                 FFTLib.NormD(_numSamples / 2, RealOut, ImagOut, AmplOut);
 #else
-                FFT.Compute(_numSamples, RealIn, null, RealOut, ImagOut, false);
+                FFT.Compute(_numSamples, RealIn, null, RealOut, ImagOut, true);
                 FFT.Norm(_numSamples / 2, RealOut, ImagOut, AmplOut);
 #endif
 
 #if USING_PEAKMETER
                 renderPeakMeter();
 #else
-                scaleSpectrum(AmplOut);
+                //scaleSpectrum(AmplOut);
                 drawSpectrum(AmplOut, NUM_FREQUENCY);
                 sumAmplSpectrum(AmplOut, NUM_FREQUENCY);
                 refreshDigest();
