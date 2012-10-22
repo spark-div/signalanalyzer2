@@ -19,13 +19,14 @@ namespace SignalAnalyzer2
     public partial class SygnalAnalyzerForm : Form, IWaveNotifyHandler
     {
         SamplesSummator mSamplesSummator;
+        private double  mPreviousDigest = 0.0;
         //====================================
         private int m_chosendiveceid = 0;        
         private const int WM_USER = 0x0400;
         private const int WM_AUDIO_DONE = WM_USER + 0x100;
         private const int MAX_BUFFERS = 4;
         //private const int MAX_BUFSIZE = 2048;
-        private const double FFT_SPEED = 0.06;
+        private const double FFT_SPEED = 1.0;//0.06;
         private const int NUM_FREQUENCY = 19;
         private int[] METER_FREQUENCY = new int[NUM_FREQUENCY] { 30, 60, 80, 90, 100, 150, 200, 330, 480, 660, 880, 1000, 1500, 2000, 3000, 5000, 8000, 12000, 16000 };
         private int[] _meterData = new int[NUM_FREQUENCY];
@@ -260,20 +261,21 @@ namespace SignalAnalyzer2
            GraphPane graphPane = InputZGraphCtrl.GraphPane;
            graphPane.CurveList.Clear();
            // Generate a blue curve with Star symbols
-           LineItem myCurve = graphPane.AddCurve("Input, mV", m_pointsList, Color.GreenYellow, SymbolType.None);
+           LineItem myCurve = graphPane.AddCurve("Input", m_pointsList, Color.GreenYellow, SymbolType.None);
            InputZGraphCtrl.AxisChange();
            InputZGraphCtrl.Invalidate();
         }
 
         private void drawSpectrum(double[] AmplSpectrum, uint size )
         {
+           double maxAmpl = (_wfmt.BitsPerSample == 8) ? (127.0 * 127.0) : (32767.0 * 32767.0);
            m_pointsList = new PointPairList();
            for (int i = 0; i < _numSamples; i++)
            {
               {                 
                  double indice = ((double)i * _wfmt.SamplesPerSecond) / (double)_numSamples;
                  double _x = indice;
-                 double _y = Convert.ToDouble(AmplSpectrum[i]);
+                 double _y = Convert.ToDouble(AmplSpectrum[i]);//Convert.ToDouble(Math.Log10(AmplSpectrum[i]));
                  m_pointsList.Add(_x, _y);
               }
            }
@@ -287,12 +289,16 @@ namespace SignalAnalyzer2
 
         private void refreshDigest()
         {
-            EnergyBar.Amplitude = (int)mSamplesSummator.computeDigest(); // 99000000 ;
+            double digest = mSamplesSummator.computeDigest(); 
+            EnergyBar.Amplitude = (int)digest;// 99000000 ;
+            deltaPower.Amplitude = (float)(digest - mPreviousDigest);//(float)( Math.Log10(digest) - Math.Log10(mPreviousDigest));
+            mPreviousDigest = digest;
         }
 
         // summurize 8 previous samples
         private void sumAmplSpectrum(double[] AmplSpectrum, uint size)
         {
+            double maxAmpl = (_wfmt.BitsPerSample == 8) ? (127.0 * 127.0) : (32767.0 * 32767.0);
             double[] sumSpectrum = mSamplesSummator.addAnotherSample(AmplSpectrum, size);
 
             m_pointsList = new PointPairList();

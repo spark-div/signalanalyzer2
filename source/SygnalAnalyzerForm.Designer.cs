@@ -34,11 +34,12 @@
           this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
           this.StartCaptureBtn = new System.Windows.Forms.Button();
           this.StopBtn = new System.Windows.Forms.Button();
-          this.EnergyBar = new NAudio.Gui.VolumeMeter();
           this.menuStrip1 = new System.Windows.Forms.MenuStrip();
           this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.deviceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.selectInputDeviceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+          this.EnergyBar = new NAudio.Gui.VolumeMeter();
+          this.deltaPower = new NAudio.Gui.VolumeMeter();
           this.tableLayoutPanel1.SuspendLayout();
           this.tableLayoutPanel2.SuspendLayout();
           this.menuStrip1.SuspendLayout();
@@ -54,6 +55,7 @@
           this.tableLayoutPanel1.Controls.Add(this.SpectrumZGraphCtrl, 0, 1);
           this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
           this.tableLayoutPanel1.Controls.Add(this.EnergyBar, 1, 0);
+          this.tableLayoutPanel1.Controls.Add(this.deltaPower, 1, 1);
           this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
           this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
           this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -129,17 +131,6 @@
           this.StopBtn.UseVisualStyleBackColor = true;
           this.StopBtn.Click += new System.EventHandler(this.StopBtn_Click);
           // 
-          // EnergyBar
-          // 
-          this.EnergyBar.Amplitude = 0F;
-          this.EnergyBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-          this.EnergyBar.Location = new System.Drawing.Point(961, 3);
-          this.EnergyBar.MaxDb = 800F;
-          this.EnergyBar.MinDb = -60F;
-          this.EnergyBar.Name = "EnergyBar";
-          this.EnergyBar.Size = new System.Drawing.Size(53, 247);
-          this.EnergyBar.TabIndex = 0;
-          // 
           // menuStrip1
           // 
           this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -171,6 +162,33 @@
           this.selectInputDeviceToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
           this.selectInputDeviceToolStripMenuItem.Text = "Select input device";
           this.selectInputDeviceToolStripMenuItem.Click += new System.EventHandler(this.selectInputDeviceToolStripMenuItem_Click);
+          // 
+          // EnergyBar
+          // 
+          this.EnergyBar.Amplitude = 0F;
+          this.EnergyBar.Dock = System.Windows.Forms.DockStyle.Fill;
+          this.EnergyBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+          this.EnergyBar.Location = new System.Drawing.Point(961, 3);
+          this.EnergyBar.Log = false;
+          this.EnergyBar.MaxDb = 800F;
+          this.EnergyBar.MinDb = -60F;
+          this.EnergyBar.Name = "EnergyBar";
+          this.EnergyBar.Size = new System.Drawing.Size(53, 247);
+          this.EnergyBar.TabIndex = 0;
+          // 
+          // deltaPower
+          // 
+          this.deltaPower.Amplitude = 0F;
+          this.deltaPower.Dock = System.Windows.Forms.DockStyle.Fill;
+          this.deltaPower.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+          this.deltaPower.Location = new System.Drawing.Point(961, 256);
+          this.deltaPower.Log = false;
+          this.deltaPower.MaxDb = 20F;
+          this.deltaPower.MinDb = -20F;
+          this.deltaPower.Name = "deltaPower";
+          this.deltaPower.Size = new System.Drawing.Size(53, 218);
+          this.deltaPower.TabIndex = 3;
+          this.deltaPower.Text = "DeltaP";
           // 
           // SygnalAnalyzerForm
           // 
@@ -204,6 +222,7 @@
       private System.Windows.Forms.ToolStripMenuItem deviceToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem selectInputDeviceToolStripMenuItem;
       private NAudio.Gui.VolumeMeter EnergyBar;
+      private NAudio.Gui.VolumeMeter deltaPower;
    }
 }
 

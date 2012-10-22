@@ -70,6 +70,13 @@ namespace NAudio.Gui
         public float MaxDb { get; set; }
 
         /// <summary>
+        /// Maximum decibels
+        /// </summary>
+        [DefaultValue(true)]
+        public bool Log { get; set; }
+
+
+        /// <summary>
         /// Meter orientation
         /// </summary>
         [DefaultValue(Orientation.Vertical)]
@@ -85,7 +92,8 @@ namespace NAudio.Gui
             
             pe.Graphics.DrawRectangle(Pens.Black, 0, 0, this.Width - 1, this.Height - 1);
 
-            double db = 20 * Math.Log10(Amplitude);
+
+            double db = ( !Log ? Amplitude : (20 * Math.Log10(Amplitude)));
             if (db < MinDb)
                 db = MinDb;
             if (db > MaxDb)

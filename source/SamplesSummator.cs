@@ -72,5 +72,15 @@ namespace SignalAnalyzer2
                           + currentSpectrumSum[idx_995Hz + 1];
             return digest;
         }
+        public double computeDelta()
+        {
+            int idx_995Hz = getIndexByFrequency(995);
+            double digest = currentSpectrumSum[idx_995Hz]
+                          + currentSpectrumSum[idx_995Hz + 1]
+                          + currentSpectrumSum[idx_995Hz + 1]
+                          + currentSpectrumSum[idx_995Hz + 1]
+                          + currentSpectrumSum[idx_995Hz + 1];
+            return digest;
+        }
     }
 }
