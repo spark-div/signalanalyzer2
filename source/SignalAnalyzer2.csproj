@@ -79,6 +79,7 @@
     <Compile Include="ChooseDevice.Designer.cs">
       <DependentUpon>ChooseDevice.cs</DependentUpon>
     </Compile>
+    <Compile Include="SamplesSummator.cs" />
     <Compile Include="SygnalAnalyzerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +88,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VolumeMeter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VolumeMeter.designer.cs">
+      <DependentUpon>VolumeMeter.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ChooseDevice.resx">
       <DependentUpon>ChooseDevice.cs</DependentUpon>
     </EmbeddedResource>

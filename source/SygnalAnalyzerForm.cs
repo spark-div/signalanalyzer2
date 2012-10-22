@@ -18,7 +18,9 @@ namespace SignalAnalyzer2
 
     public partial class SygnalAnalyzerForm : Form, IWaveNotifyHandler
     {
-        private int m_chosendiveceid = 0;
+        SamplesSummator mSamplesSummator;
+        //====================================
+        private int m_chosendiveceid = 0;        
         private const int WM_USER = 0x0400;
         private const int WM_AUDIO_DONE = WM_USER + 0x100;
         private const int MAX_BUFFERS = 4;
@@ -31,8 +33,6 @@ namespace SignalAnalyzer2
         private double[] RealOut;
         private double[] ImagOut;
         private double[] AmplOut;
-        //previous samples
-        private double[][] mPreviousAmplSpectrum;
         private byte[] waveData;    // copy of wave data - unless 'unsafe' code is an option
         private WaveBuffer[] _waveBuffer;
         private WaveInDevice _waveInput;
@@ -285,14 +285,40 @@ namespace SignalAnalyzer2
            SpectrumZGraphCtrl.Invalidate();
         }
 
+        private void refreshDigest()
+        {
+            EnergyBar.Amplitude = (int)mSamplesSummator.computeDigest() / 99000000 ;
+        }
+
         // summurize 8 previous samples
         private void sumAmplSpectrum(double[] AmplSpectrum, uint size)
         {
+            double[] sumSpectrum = mSamplesSummator.addAnotherSample(AmplSpectrum, size);
+
+            m_pointsList = new PointPairList();
+            for (int i = 0; i < _numSamples; i++)
+            {
+                {
+                    double indice = ((double)i * _wfmt.SamplesPerSecond) / (double)_numSamples;
+                    double _x = indice;
+                    double _y = Convert.ToDouble(sumSpectrum[i]);
+                    m_pointsList.Add(_x, _y);
+                }
+            }
+
             GraphPane graphPane = SpectrumZGraphCtrl.GraphPane;
-            graphPane.CurveList.Clear();
-            LineItem myCurve = graphPane.AddCurve("Spectrum", m_pointsList, Color.Green, SymbolType.None);
+            //graphPane.CurveList.Clear();
+            LineItem myCurve = graphPane.AddCurve("Added Spectrum", m_pointsList, Color.Red, SymbolType.None);
             SpectrumZGraphCtrl.AxisChange();
             SpectrumZGraphCtrl.Invalidate();
+        }
+
+        void scaleSpectrum(double[] AmplOut)
+        {
+            for (int i = 0; i < AmplOut.Length; i ++ )
+            {
+                AmplOut[i] = AmplOut[i] / 100;
+            }
         }
 
 #if USING_PEAKMETER
@@ -353,8 +379,10 @@ namespace SignalAnalyzer2
 #if USING_PEAKMETER
                 renderPeakMeter();
 #else
+                scaleSpectrum(AmplOut);
                 drawSpectrum(AmplOut, NUM_FREQUENCY);
                 sumAmplSpectrum(AmplOut, NUM_FREQUENCY);
+                refreshDigest();
 #endif //USING_PEAKMETER
                 _numSamples = 0; // ready to do it again
             }
@@ -517,8 +545,9 @@ namespace SignalAnalyzer2
             RealIn = new double[numSamples];
             RealOut = new double[numSamples];
             ImagOut = new double[numSamples];
-            AmplOut = new double[numSamples];
+            AmplOut = new double[numSamples];            
             waveData = new byte[_bufferSize];
+            mSamplesSummator = new SamplesSummator(numSamples, _wfmt.SamplesPerSecond);
         }
         void ReleaseFFTData()
         {

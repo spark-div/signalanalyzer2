@@ -34,11 +34,11 @@
           this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
           this.StartCaptureBtn = new System.Windows.Forms.Button();
           this.StopBtn = new System.Windows.Forms.Button();
+          this.EnergyBar = new NAudio.Gui.VolumeMeter();
           this.menuStrip1 = new System.Windows.Forms.MenuStrip();
           this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.deviceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.selectInputDeviceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.EnergyBar = new System.Windows.Forms.ProgressBar();
           this.tableLayoutPanel1.SuspendLayout();
           this.tableLayoutPanel2.SuspendLayout();
           this.menuStrip1.SuspendLayout();
@@ -48,7 +48,7 @@
           // 
           this.tableLayoutPanel1.ColumnCount = 2;
           this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-          this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
+          this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
           this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
           this.tableLayoutPanel1.Controls.Add(this.InputZGraphCtrl, 0, 0);
           this.tableLayoutPanel1.Controls.Add(this.SpectrumZGraphCtrl, 0, 1);
@@ -76,7 +76,7 @@
           this.InputZGraphCtrl.ScrollMinX = 0D;
           this.InputZGraphCtrl.ScrollMinY = 0D;
           this.InputZGraphCtrl.ScrollMinY2 = 0D;
-          this.InputZGraphCtrl.Size = new System.Drawing.Size(888, 247);
+          this.InputZGraphCtrl.Size = new System.Drawing.Size(952, 247);
           this.InputZGraphCtrl.TabIndex = 0;
           // 
           // SpectrumZGraphCtrl
@@ -91,7 +91,7 @@
           this.SpectrumZGraphCtrl.ScrollMinX = 0D;
           this.SpectrumZGraphCtrl.ScrollMinY = 0D;
           this.SpectrumZGraphCtrl.ScrollMinY2 = 0D;
-          this.SpectrumZGraphCtrl.Size = new System.Drawing.Size(888, 218);
+          this.SpectrumZGraphCtrl.Size = new System.Drawing.Size(952, 218);
           this.SpectrumZGraphCtrl.TabIndex = 0;
           // 
           // tableLayoutPanel2
@@ -129,6 +129,17 @@
           this.StopBtn.UseVisualStyleBackColor = true;
           this.StopBtn.Click += new System.EventHandler(this.StopBtn_Click);
           // 
+          // EnergyBar
+          // 
+          this.EnergyBar.Amplitude = 0F;
+          this.EnergyBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+          this.EnergyBar.Location = new System.Drawing.Point(961, 3);
+          this.EnergyBar.MaxDb = 800F;
+          this.EnergyBar.MinDb = -60F;
+          this.EnergyBar.Name = "EnergyBar";
+          this.EnergyBar.Size = new System.Drawing.Size(53, 247);
+          this.EnergyBar.TabIndex = 0;
+          // 
           // menuStrip1
           // 
           this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -161,16 +172,6 @@
           this.selectInputDeviceToolStripMenuItem.Text = "Select input device";
           this.selectInputDeviceToolStripMenuItem.Click += new System.EventHandler(this.selectInputDeviceToolStripMenuItem_Click);
           // 
-          // EnergyBar
-          // 
-          this.EnergyBar.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-          this.EnergyBar.Location = new System.Drawing.Point(897, 3);
-          this.EnergyBar.MarqueeAnimationSpeed = 0;
-          this.EnergyBar.Name = "EnergyBar";
-          this.EnergyBar.Size = new System.Drawing.Size(41, 247);
-          this.EnergyBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-          this.EnergyBar.TabIndex = 3;
-          // 
           // SygnalAnalyzerForm
           // 
           this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,8 +203,7 @@
       private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem deviceToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem selectInputDeviceToolStripMenuItem;
-      private System.Windows.Forms.ProgressBar EnergyBar;
-
+      private NAudio.Gui.VolumeMeter EnergyBar;
    }
 }
 
