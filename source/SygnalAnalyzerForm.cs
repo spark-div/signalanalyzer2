@@ -18,6 +18,9 @@ namespace SignalAnalyzer2
 
     public partial class SygnalAnalyzerForm : Form, IWaveNotifyHandler
     {
+        SamplesSummator mSamplesSummator;
+        //====================================
+        private int m_chosendiveceid = 0;        
         private const int WM_USER = 0x0400;
         private const int WM_AUDIO_DONE = WM_USER + 0x100;
         private const int MAX_BUFFERS = 4;
@@ -49,7 +52,16 @@ namespace SignalAnalyzer2
             _numOutBuffers = 0;
            // ------------------------------------------------------
             InputZGraphCtrl.GraphPane.Title.Text = "Input, mV";
+            InputZGraphCtrl.GraphPane.XAxis.Title.Text = "time, ms";
+            InputZGraphCtrl.GraphPane.YAxis.Title.Text = "signal, mV";
+            InputZGraphCtrl.GraphPane.XAxis.MinorGrid.IsVisible = true;
+            InputZGraphCtrl.GraphPane.YAxis.MinorGrid.IsVisible = true;
             SpectrumZGraphCtrl.GraphPane.Title.Text = "Spectrum, dB";
+            SpectrumZGraphCtrl.GraphPane.XAxis.MinorGrid.IsVisible = true;
+            SpectrumZGraphCtrl.GraphPane.YAxis.MinorGrid.IsVisible = true;
+            SpectrumZGraphCtrl.GraphPane.YAxis.Type = AxisType.Log;
+            SpectrumZGraphCtrl.GraphPane.YAxis.Title.Text = "Amplitude, db";
+            SpectrumZGraphCtrl.GraphPane.XAxis.Title.Text = "frequency, Hz";
         }
 
         private void Terminate()
@@ -248,7 +260,7 @@ namespace SignalAnalyzer2
            GraphPane graphPane = InputZGraphCtrl.GraphPane;
            graphPane.CurveList.Clear();
            // Generate a blue curve with Star symbols
-           LineItem myCurve = graphPane.AddCurve("Input, mV", m_pointsList, Color.Blue, SymbolType.None);
+           LineItem myCurve = graphPane.AddCurve("Input, mV", m_pointsList, Color.GreenYellow, SymbolType.None);
            InputZGraphCtrl.AxisChange();
            InputZGraphCtrl.Invalidate();
         }
@@ -258,21 +270,79 @@ namespace SignalAnalyzer2
            m_pointsList = new PointPairList();
            for (int i = 0; i < _numSamples; i++)
            {
-              {
-                 double _x = Convert.ToDouble(i);
-                 double _y = Convert.ToDouble(RealOut[i]);
+              {                 
+                 double indice = ((double)i * _wfmt.SamplesPerSecond) / (double)_numSamples;
+                 double _x = indice;
+                 double _y = Convert.ToDouble(AmplSpectrum[i]);
                  m_pointsList.Add(_x, _y);
               }
            }
 
            GraphPane graphPane = SpectrumZGraphCtrl.GraphPane;
-           graphPane.CurveList.Clear();
-           // Generate a blue curve with Star symbols
-           LineItem myCurve = graphPane.AddCurve("Spectrum", m_pointsList, Color.Blue, SymbolType.None);
+           graphPane.CurveList.Clear();           
+           LineItem myCurve = graphPane.AddCurve("Spectrum", m_pointsList, Color.Green, SymbolType.None);
            SpectrumZGraphCtrl.AxisChange();
            SpectrumZGraphCtrl.Invalidate();
         }
 
+        private void refreshDigest()
+        {
+            EnergyBar.Amplitude = (int)mSamplesSummator.computeDigest(); // 99000000 ;
+        }
+
+        // summurize 8 previous samples
+        private void sumAmplSpectrum(double[] AmplSpectrum, uint size)
+        {
+            double[] sumSpectrum = mSamplesSummator.addAnotherSample(AmplSpectrum, size);
+
+            m_pointsList = new PointPairList();
+            for (int i = 0; i < _numSamples; i++)
+            {
+                {
+                    double indice = ((double)i * _wfmt.SamplesPerSecond) / (double)_numSamples;
+                    double _x = indice;
+                    double _y = Convert.ToDouble(sumSpectrum[i]);
+                    m_pointsList.Add(_x, _y);
+                }
+            }
+
+            GraphPane graphPane = SpectrumZGraphCtrl.GraphPane;
+            //graphPane.CurveList.Clear();
+            LineItem myCurve = graphPane.AddCurve("Added Spectrum", m_pointsList, Color.Red, SymbolType.None);
+            SpectrumZGraphCtrl.AxisChange();
+            SpectrumZGraphCtrl.Invalidate();
+        }
+
+        void scaleSpectrum(double[] AmplOut)
+        {
+            for (int i = 0; i < AmplOut.Length; i ++ )
+            {
+                AmplOut[i] = AmplOut[i] / 100;
+            }
+        }
+
+#if USING_PEAKMETER
+        private void renderPeakMeter();
+        {
+               double maxAmpl = (_wfmt.BitsPerSample == 8) ? (127.0 * 127.0) : (32767.0 * 32767.0);
+                               
+                // update meter
+                int centerFreq = (int)(_wfmt.SamplesPerSecond / 2);
+                for (int i = 0; i < NUM_FREQUENCY; ++i)
+                {
+                    if (METER_FREQUENCY[i] > centerFreq)
+                        _meterData[i] = 0;
+                    else
+                    {
+                        int indice = (int)(METER_FREQUENCY[i] * _numSamples / _wfmt.SamplesPerSecond);
+                        int metervalue = (int)(100+ 20.0 * Math.Log10(AmplOut[indice] / maxAmpl));
+                        _meterData[i] = metervalue;
+                    }
+                }
+                
+                peakMeterCtrl1.SetData(_meterData, 0, NUM_FREQUENCY);
+        }
+#endif //USING_PEAKMETER
         void ComputeFFT(WaveBuffer wbuf)
         {
             if (GetAudioData(wbuf.AudioData, wbuf.BytesRecorded, _wfmt))
@@ -302,30 +372,17 @@ namespace SignalAnalyzer2
                 // We can skip N/2 to N samples (mirror frequencies) - Digital samples are real integer
                 FFTLib.NormD(_numSamples / 2, RealOut, ImagOut, AmplOut);
 #else
-                FFT.Compute(_numSamples, RealIn, null, RealOut, ImagOut, false);
+                FFT.Compute(_numSamples, RealIn, null, RealOut, ImagOut, true);
                 FFT.Norm(_numSamples / 2, RealOut, ImagOut, AmplOut);
 #endif
 
 #if USING_PEAKMETER
-                double maxAmpl = (_wfmt.BitsPerSample == 8) ? (127.0 * 127.0) : (32767.0 * 32767.0);
-                               
-                // update meter
-                int centerFreq = (int)(_wfmt.SamplesPerSecond / 2);
-                for (int i = 0; i < NUM_FREQUENCY; ++i)
-                {
-                    if (METER_FREQUENCY[i] > centerFreq)
-                        _meterData[i] = 0;
-                    else
-                    {
-                        int indice = (int)(METER_FREQUENCY[i] * _numSamples / _wfmt.SamplesPerSecond);
-                        int metervalue = (int)(100+ 20.0 * Math.Log10(AmplOut[indice] / maxAmpl));
-                        _meterData[i] = metervalue;
-                    }
-                }
-                
-                peakMeterCtrl1.SetData(_meterData, 0, NUM_FREQUENCY);
+                renderPeakMeter();
 #else
+                //scaleSpectrum(AmplOut);
                 drawSpectrum(AmplOut, NUM_FREQUENCY);
+                sumAmplSpectrum(AmplOut, NUM_FREQUENCY);
+                refreshDigest();
 #endif //USING_PEAKMETER
                 _numSamples = 0; // ready to do it again
             }
@@ -488,8 +545,9 @@ namespace SignalAnalyzer2
             RealIn = new double[numSamples];
             RealOut = new double[numSamples];
             ImagOut = new double[numSamples];
-            AmplOut = new double[numSamples];
+            AmplOut = new double[numSamples];            
             waveData = new byte[_bufferSize];
+            mSamplesSummator = new SamplesSummator(numSamples, _wfmt.SamplesPerSecond);
         }
         void ReleaseFFTData()
         {
@@ -517,6 +575,15 @@ namespace SignalAnalyzer2
         private void StopBtn_Click(object sender, EventArgs e)
         {
            Terminate();
+        }
+
+        private void selectInputDeviceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChooseDevice choosedeviceform = new ChooseDevice();
+            if (choosedeviceform.ShowDialog() == DialogResult.OK)
+            {
+                m_chosendiveceid = choosedeviceform.ChosenDeviceID;
+            }
         }
     }
 }
