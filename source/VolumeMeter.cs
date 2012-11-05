@@ -12,14 +12,14 @@ namespace NAudio.Gui
     /// <summary>
     /// Implements a rudimentary volume meter
     /// </summary>
-    public partial class VolumeMeter : Control
+    public partial class VolumeMeterExt : Control
     {
         Brush foregroundBrush;
         Brush brGradient;
         /// <summary>
         /// Basic volume meter
         /// </summary>
-        public VolumeMeter()
+        public VolumeMeterExt()
         {            
             this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint |
                 ControlStyles.OptimizedDoubleBuffer, true);

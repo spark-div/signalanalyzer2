@@ -34,12 +34,13 @@
           this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
           this.StartCaptureBtn = new System.Windows.Forms.Button();
           this.StopBtn = new System.Windows.Forms.Button();
+          this.EnergyBar = new NAudio.Gui.VolumeMeterExt();
+          this.deltaPower = new NAudio.Gui.VolumeMeterExt();
           this.menuStrip1 = new System.Windows.Forms.MenuStrip();
           this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.deviceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.selectInputDeviceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.EnergyBar = new NAudio.Gui.VolumeMeter();
-          this.deltaPower = new NAudio.Gui.VolumeMeter();
+          this.RecordBtn = new System.Windows.Forms.Button();
           this.tableLayoutPanel1.SuspendLayout();
           this.tableLayoutPanel2.SuspendLayout();
           this.menuStrip1.SuspendLayout();
@@ -98,17 +99,18 @@
           // 
           // tableLayoutPanel2
           // 
-          this.tableLayoutPanel2.ColumnCount = 2;
-          this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-          this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+          this.tableLayoutPanel2.ColumnCount = 3;
+          this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+          this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+          this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
           this.tableLayoutPanel2.Controls.Add(this.StartCaptureBtn, 0, 0);
           this.tableLayoutPanel2.Controls.Add(this.StopBtn, 1, 0);
+          this.tableLayoutPanel2.Controls.Add(this.RecordBtn, 2, 0);
           this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 480);
           this.tableLayoutPanel2.Name = "tableLayoutPanel2";
           this.tableLayoutPanel2.RowCount = 1;
           this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-          this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-          this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 31);
+          this.tableLayoutPanel2.Size = new System.Drawing.Size(352, 31);
           this.tableLayoutPanel2.TabIndex = 2;
           // 
           // StartCaptureBtn
@@ -123,13 +125,40 @@
           // 
           // StopBtn
           // 
-          this.StopBtn.Location = new System.Drawing.Point(103, 3);
+          this.StopBtn.Location = new System.Drawing.Point(120, 3);
           this.StopBtn.Name = "StopBtn";
           this.StopBtn.Size = new System.Drawing.Size(75, 23);
           this.StopBtn.TabIndex = 1;
           this.StopBtn.Text = "Stop";
           this.StopBtn.UseVisualStyleBackColor = true;
           this.StopBtn.Click += new System.EventHandler(this.StopBtn_Click);
+          // 
+          // EnergyBar
+          // 
+          this.EnergyBar.Amplitude = 0F;
+          this.EnergyBar.Dock = System.Windows.Forms.DockStyle.Fill;
+          this.EnergyBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+          this.EnergyBar.Location = new System.Drawing.Point(961, 3);
+          this.EnergyBar.Log = false;
+          this.EnergyBar.MaxDb = 800F;
+          this.EnergyBar.MinDb = -60F;
+          this.EnergyBar.Name = "EnergyBar";
+          this.EnergyBar.Size = new System.Drawing.Size(53, 247);
+          this.EnergyBar.TabIndex = 0;
+          // 
+          // deltaPower
+          // 
+          this.deltaPower.Amplitude = 0F;
+          this.deltaPower.Dock = System.Windows.Forms.DockStyle.Fill;
+          this.deltaPower.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+          this.deltaPower.Location = new System.Drawing.Point(961, 256);
+          this.deltaPower.Log = false;
+          this.deltaPower.MaxDb = 20F;
+          this.deltaPower.MinDb = -20F;
+          this.deltaPower.Name = "deltaPower";
+          this.deltaPower.Size = new System.Drawing.Size(53, 218);
+          this.deltaPower.TabIndex = 3;
+          this.deltaPower.Text = "DeltaP";
           // 
           // menuStrip1
           // 
@@ -163,32 +192,15 @@
           this.selectInputDeviceToolStripMenuItem.Text = "Select input device";
           this.selectInputDeviceToolStripMenuItem.Click += new System.EventHandler(this.selectInputDeviceToolStripMenuItem_Click);
           // 
-          // EnergyBar
+          // RecordBtn
           // 
-          this.EnergyBar.Amplitude = 0F;
-          this.EnergyBar.Dock = System.Windows.Forms.DockStyle.Fill;
-          this.EnergyBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-          this.EnergyBar.Location = new System.Drawing.Point(961, 3);
-          this.EnergyBar.Log = false;
-          this.EnergyBar.MaxDb = 800F;
-          this.EnergyBar.MinDb = -60F;
-          this.EnergyBar.Name = "EnergyBar";
-          this.EnergyBar.Size = new System.Drawing.Size(53, 247);
-          this.EnergyBar.TabIndex = 0;
-          // 
-          // deltaPower
-          // 
-          this.deltaPower.Amplitude = 0F;
-          this.deltaPower.Dock = System.Windows.Forms.DockStyle.Fill;
-          this.deltaPower.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-          this.deltaPower.Location = new System.Drawing.Point(961, 256);
-          this.deltaPower.Log = false;
-          this.deltaPower.MaxDb = 20F;
-          this.deltaPower.MinDb = -20F;
-          this.deltaPower.Name = "deltaPower";
-          this.deltaPower.Size = new System.Drawing.Size(53, 218);
-          this.deltaPower.TabIndex = 3;
-          this.deltaPower.Text = "DeltaP";
+          this.RecordBtn.Location = new System.Drawing.Point(237, 3);
+          this.RecordBtn.Name = "RecordBtn";
+          this.RecordBtn.Size = new System.Drawing.Size(112, 23);
+          this.RecordBtn.TabIndex = 2;
+          this.RecordBtn.Text = "Record";
+          this.RecordBtn.UseVisualStyleBackColor = true;
+          this.RecordBtn.Click += new System.EventHandler(this.RecordBtn_Click);
           // 
           // SygnalAnalyzerForm
           // 
@@ -221,8 +233,9 @@
       private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem deviceToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem selectInputDeviceToolStripMenuItem;
-      private NAudio.Gui.VolumeMeter EnergyBar;
-      private NAudio.Gui.VolumeMeter deltaPower;
+      private NAudio.Gui.VolumeMeterExt EnergyBar;
+      private NAudio.Gui.VolumeMeterExt deltaPower;
+      private System.Windows.Forms.Button RecordBtn;
    }
 }
 

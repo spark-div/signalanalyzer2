@@ -12,12 +12,15 @@ using System.Runtime.InteropServices;
 using Ernzo.Windows.WaveAudio;
 using Ernzo.DSP;
 using ZedGraph;
+//using NAudio.Wave;
 
 namespace SignalAnalyzer2
 {
 
     public partial class SygnalAnalyzerForm : Form, IWaveNotifyHandler
     {
+        NAudio.Wave.WaveFileWriter mWavefileWr = null;
+        bool mIsRecording = false;        
         SamplesSummator mSamplesSummator;
         private double  mPreviousDigest = 0.0;
         //====================================
@@ -168,7 +171,7 @@ namespace SignalAnalyzer2
                             WaveStatus status = _waveInput.GetDeviceStatus();
                             if (status == WaveStatus.waveStarted)
                             {
-                                ProcessAudioData(wbuf);
+                                ProcessAudioData(wbuf);                                
                             }
                         }
                         catch (Exception ex) // Typically: COMException, SystemException
@@ -222,12 +225,27 @@ namespace SignalAnalyzer2
             }
         }
 
+        private void WriteToFile(WaveBuffer wbuf)
+        {
+            if (wbuf.BufferLength == 0 )
+                return;
+            
+            if (mWavefileWr != null)
+            {
+                int buffer_length = (int)wbuf.BufferLength;
+                IntPtr ptr = wbuf.AudioData;
+                Marshal.Copy(ptr, waveData, 0, (int)buffer_length);
+                mWavefileWr.Write(waveData, 0, buffer_length);
+            }
+        }
+
         private void ProcessAudioData(WaveBuffer wbuf)
         {
             try
             {
                 if (_waveInput.GetDeviceStatus() == WaveStatus.waveStarted)
                 {
+                    WriteToFile(wbuf);
                     ComputeFFT(wbuf);
 
                     int mmr = _waveInput.PrepareBuffer(wbuf);
@@ -589,6 +607,24 @@ namespace SignalAnalyzer2
             if (choosedeviceform.ShowDialog() == DialogResult.OK)
             {
                 m_chosendiveceid = choosedeviceform.ChosenDeviceID;
+            }
+        }
+
+        private void RecordBtn_Click(object sender, EventArgs e)
+        {            
+            mIsRecording = !mIsRecording;
+            if (mIsRecording == true)
+            {
+                string filename = String.Format("test-{0:yyy-mm-ddTHH-mm-ss}.wav", DateTime.Now);
+                NAudio.Wave.WaveFormat format = new NAudio.Wave.WaveFormat(_wfmt.BytesPerSecond, _wfmt.Channels);
+                mWavefileWr = new NAudio.Wave.WaveFileWriter(filename, format);
+            }
+            else
+            {
+                mWavefileWr.Flush();
+                mWavefileWr.Close();
+                mWavefileWr.Dispose();
+                mWavefileWr = null;
             }
         }
     }

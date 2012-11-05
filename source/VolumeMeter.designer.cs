@@ -1,6 +1,6 @@
 ﻿namespace NAudio.Gui
 {
-    partial class VolumeMeter
+    partial class VolumeMeterExt
     {
         /// <summary>
         /// Required designer variable.

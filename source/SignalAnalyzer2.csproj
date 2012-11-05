@@ -121,6 +121,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\3rdparty\NAudio\NAudio\NAudio.csproj">
+      <Project>{DA4F02E3-0B5E-42CD-B8D9-5583FA51D66E}</Project>
+      <Name>NAudio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\3rdparty\WindowsMedia\WindowsMedia.csproj">
       <Project>{6EC1A5CA-5E1D-4CE9-A6B3-79633BA2171B}</Project>
       <Name>WindowsMedia</Name>
